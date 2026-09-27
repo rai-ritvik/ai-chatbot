@@ -1,7 +1,7 @@
 import axios from 'axios';
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${API_KEY}`;
 
 export const fetchGeminiResponse = async (userMessage) => {
   try {

@@ -1,13 +1,24 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addMessage, setLoading } from '../store/chatSlice';
+import { fetchGeminiResponse } from '../services/geminiApi';
 
 export default function ChatInput() {
   const [text, setText] = useState('');
+  const dispatch = useDispatch();
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!text.trim()) return;
-    
-    console.log("Ready to send:", text); 
+    const userMessage = text;
     setText(''); 
+    dispatch(addMessage({ role: 'user', text: userMessage }));
+    
+    dispatch(setLoading(true));
+
+    const aiResponseText = await fetchGeminiResponse(userMessage);
+    dispatch(addMessage({ role: 'ai', text: aiResponseText }));
+    
+    dispatch(setLoading(false));
   }
 
   return (

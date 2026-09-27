@@ -1,2 +1,12 @@
-# ai-chatbot
-A responsive AI chatbot built with React, Redux Toolkit, and Axios, integrating the Google Gemini API for real-time conversational responses.
+# AI Chatbot
+
+A simple AI chatbot built using React, integrating the Google Gemini API with Axios, and managing chat state using Redux Toolkit.
+
+## Tech Stack
+* React
+* Redux Toolkit
+* Axios
+* Tailwind CSS
+
+## Setup Instructions
+(We will write these together once the app is working!)
